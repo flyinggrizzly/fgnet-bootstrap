@@ -7,12 +7,6 @@ import "./index.css"
 export default () => (
   <div className="App">
     <Layout>
-      <Hero />
-      <hr />
-      <Summary />
-      <hr />
-      <Projects />
-      <hr />
     </Layout>
   </div>
 )
