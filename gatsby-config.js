@@ -8,6 +8,7 @@ module.exports = {
     author: `@real_carlw`,
   },
   plugins: [
+    'gatsby-plugin-resolve-src',
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
@@ -26,13 +27,6 @@ module.exports = {
         orientation: "any",
         start_url: "/?homescreen=1",
         version: "1.0",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //Replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: "UA-XXXXXXXXX-X",
       },
     },
     `gatsby-plugin-react-helmet`,
