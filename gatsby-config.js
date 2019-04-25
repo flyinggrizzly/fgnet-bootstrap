@@ -9,6 +9,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-resolve-src',
+    'gatsby-mdx',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/posts/`,
+      }
+    },
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
