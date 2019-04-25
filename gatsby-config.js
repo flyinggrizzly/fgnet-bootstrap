@@ -9,7 +9,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-resolve-src',
-    'gatsby-mdx',
+    {
+      resolve: 'gatsby-mdx',
+      options: {
+        extensions: ['.mdx', '.md'],
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
