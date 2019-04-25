@@ -14,8 +14,11 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@mdx-js/mdx": "^1.0.14",
+    "@mdx-js/react": "^1.0.6",
     "boostrap": "^2.0.0",
     "gatsby": "^2.3.24",
+    "gatsby-mdx": "^0.6.2",
     "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-google-analytics": "^2.0.18",
     "gatsby-plugin-manifest": "^2.0.26",
