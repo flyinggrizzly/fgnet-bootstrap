@@ -1,0 +1,10 @@
+.heading-autolink-icon {
+  float: left;
+  color: black;
+  margin-left: -1.4em;
+  box-shadow: none;
+}
+
+.heading-autolink-icon:hover {
+  color: #377BB5;
+}

@@ -1,8 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import { MDXProvider } from '@mdx-js/react'
 
 import { Container } from 'react-bootstrap'
+import mdxComponents from 'components/mdx_components'
 
 import Sidebar from './sidebar'
 
@@ -23,7 +25,9 @@ const Layout = ({ children }) => (
       <>
         <Sidebar />
         <Container className={ layoutStyles.mainContent }>
-          { children }
+          <MDXProvider components={ mdxComponents }>
+            { children }
+          </MDXProvider>
         </Container>
       </>
     )}

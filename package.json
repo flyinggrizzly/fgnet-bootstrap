@@ -27,10 +27,15 @@
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-sharp": "^2.1.17",
+    "github-slugger": "^1.2.1",
+    "mdx-utils": "^0.1.1",
+    "prism-react-renderer": "^0.1.6",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-icons": "^3.6.1",
+    "react-live": "^2.0.1"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
