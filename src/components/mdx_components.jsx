@@ -7,7 +7,10 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { GoLink as LinkIcon } from 'react-icons/go'
 import styles from 'styles/mdx_components.module.css'
 
+import ImageCaption from 'components/image_caption'
+
 const mdxComponents = {
+  // Markdown syntax overrides
   h1: props => <AutolinkHeading size="h1" { ...props } />,
   h2: props => <AutolinkHeading size="h2" { ...props } />,
   h3: props => <AutolinkHeading size="h3" { ...props } />,
@@ -24,6 +27,9 @@ const mdxComponents = {
       return <pre {...preProps} />
     }
   },
+
+  // Post short-code components
+  ImageCaption: props => <ImageCaption { ...props } />,
 }
 export default mdxComponents
 
