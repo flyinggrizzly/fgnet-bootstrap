@@ -1,0 +1,11 @@
+.element {
+  font-size: .9em;
+  color: darkgrey;
+  max-width: 590px;
+  margin: -5px auto 2em auto;
+  border-bottom: 1px solid darkgrey;
+}
+
+.element > p {
+  margin-bottom: 0;
+}
