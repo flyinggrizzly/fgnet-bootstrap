@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 
 import styles from 'styles/callout.module.css'
 
 function Heading(props) {
-  return <h1 className={ styles.heading }>{ props.content }</h1>
+  return <h1 id={ `callout-${ _.kebabCase(props.content) }` } className={ styles.heading }>{ props.content }</h1>
 }
 
 export default class Callout extends Component {
