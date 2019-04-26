@@ -3,6 +3,8 @@ import { preToCodeBlock } from 'mdx-utils'
 
 import AutolinkHeading from './autolink_heading'
 import Code from './code'
+
+import Callout from './callout'
 import ImageCaption from './image_caption'
 
 const mdxComponents = {
@@ -25,6 +27,7 @@ const mdxComponents = {
   },
 
   // Post short-code components
+  Callout: props => <Callout { ...props } />,
   ImageCaption: props => <ImageCaption { ...props } />,
 }
 export default mdxComponents
