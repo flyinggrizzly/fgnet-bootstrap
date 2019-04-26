@@ -21,9 +21,11 @@ export default class BlogPost extends Component {
             <h1 className={ postStyles.postTitle }>{ metadata.title }</h1>
             <h6>{ metadata.date }</h6>
             <UniqueSlugContext.Provider value={ new GithubSlugger() }>
-              <MDXRenderer>
-                { post.code.body }
-              </MDXRenderer>
+              <main className={ postStyles.postBody }>
+                <MDXRenderer>
+                  { post.code.body }
+                </MDXRenderer>
+              </main>
             </UniqueSlugContext.Provider>
           </Col>
         </Row>

@@ -1,2 +1,10 @@
 .post-title {
 }
+
+.post-body h1 {
+  font-size: 1.8rem;
+}
+
+.post-body h2 {
+  font-size: 1.5rem;
+}
