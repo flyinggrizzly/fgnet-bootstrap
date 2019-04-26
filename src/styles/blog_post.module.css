@@ -22,3 +22,14 @@
   padding-left: 1em;
   font-style: italic;
 }
+
+.post-body ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.post-body ul li:before {
+  content: '– ';
+}
