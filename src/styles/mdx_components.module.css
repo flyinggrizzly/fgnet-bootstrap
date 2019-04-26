@@ -1,8 +1,15 @@
 .heading-autolink-icon {
   float: left;
   color: black;
-  margin-left: -1.4em;
+  margin-left: -1.1em;
   box-shadow: none;
+  opacity: 0;
+  font-size: .8em;
+  transition: opacity 10ms;
+}
+
+.heading:hover > .heading-autolink-icon {
+  opacity: 1;
 }
 
 .heading-autolink-icon:hover {

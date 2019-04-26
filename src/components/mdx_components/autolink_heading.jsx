@@ -11,7 +11,7 @@ export default class AutolinkHeading extends Component {
     let slug = slugGenerator.slug(children)
 
     return (
-      <H { ...props }>
+      <H { ...props } className={ styles.heading }>
         <a id={ slug } href={ `#${slug}` } className={ styles.headingAutolinkIcon }>
           <LinkIcon />
         </a>
