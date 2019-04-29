@@ -1,0 +1,14 @@
+.element {
+  border-left: 5px solid #365836;
+  padding: 10px 1em 10px 2em;
+  background: #F3F6FA;
+  margin-bottom: 1.5em;
+}
+
+.heading {
+  color: #333333;
+  font-size: 1.2rem;
+  margin: 1em;
+  margin-left: 0;
+}
+
