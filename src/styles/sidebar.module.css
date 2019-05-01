@@ -8,5 +8,16 @@
     top: 0;
     left: 0;
   }
+
+  .sidebar img {
+    display: block;
+    width: 60%;
+    margin: 1rem 1rem;
+  }
+
+  .sidebar h1 {
+    color: #99CC99;
+    margin: 1rem 1rem;
+  }
 }
 
