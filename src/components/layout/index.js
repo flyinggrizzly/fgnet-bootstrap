@@ -21,14 +21,13 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Navbar expand="md" variant="light" bg="light" sticky="top">
+        <Navbar expand="md" variant="dark" bg="dark" sticky="top" className={ layoutStyles.nav }>
           <Navbar.Brand href="/">
-            <img src="/flying-grizzly-sitting.png" alt="a flying grizzly bear"
-              className="d-inline-block align-top"
-              width="30"
-              height="30"
+            <img src="/flying-grizzly.png" alt="a flying grizzly bear"
+              className="d-inline-block align-bottom"
+              height="40"
             />
-            Flying Grizzly
+            <span className={ layoutStyles.navTitle }>Flying Grizzly</span>
           </Navbar.Brand>
         </Navbar>
         <Container className={ layoutStyles.mainContent }>
