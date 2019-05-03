@@ -7,6 +7,7 @@ import GithubSlugger from 'github-slugger'
 
 import Layout from 'components/layout'
 
+import 'styles/post_globals.css'
 import postStyles from 'styles/blog_post.module.css'
 
 export default class BlogPost extends Component {

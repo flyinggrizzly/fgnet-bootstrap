@@ -1,0 +1,15 @@
+/*
+ * Use this file sparingly.
+ *
+ * You can override MDX classes we can't control with custom components to
+ * modify styling.
+ *
+ * These styles and references will **not** be processed by the CSS module
+ * processor, so they can target nodes whose references are generated outside
+ * our control.
+ */
+[id^=fnref] {
+  display: inline-block;
+  margin-top: -80px;
+  padding-top: 80px;
+}
