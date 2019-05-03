@@ -6,6 +6,9 @@
   opacity: 0;
   font-size: .8em;
   transition: opacity 10ms;
+
+  margin-top: -80px;
+  padding-top: 80px;
 }
 
 .heading:hover > .heading-autolink-icon {
