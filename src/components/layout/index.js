@@ -3,8 +3,10 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { MDXProvider } from '@mdx-js/react'
 
-import { Container, Navbar } from 'react-bootstrap'
+import { Container, Navbar, Nav } from 'react-bootstrap'
 import mdxComponents from 'components/mdx_components'
+
+import { FaRss as RssIcon } from 'react-icons/fa'
 
 import layoutStyles from 'styles/layout.module.css'
 
@@ -29,6 +31,12 @@ const Layout = ({ children }) => (
             />
             <span className={ layoutStyles.navTitle }>Flying Grizzly</span>
           </Navbar.Brand>
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Nav className="ml-auto">
+              <Nav.Link href="/feed"><RssIcon /></Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Navbar>
         <Container className={ layoutStyles.mainContent }>
           <MDXProvider components={ mdxComponents }>
