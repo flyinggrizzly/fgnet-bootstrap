@@ -44,7 +44,59 @@ module.exports = {
         path: `${__dirname}/content/posts/`,
       }
     },
-    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            output: `feed.xml`,
+            title: `Flying Grizzly feed`,
+            serialize: ({ query: { site, allMdx } }) => {
+              return  allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.fields.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                 allMdx(
+                  sort: { order: DESC, fields: [fields___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields {
+                        slug
+                        date
+                        title
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+          },
+        ]
+      }
+    },
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
