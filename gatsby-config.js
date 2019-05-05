@@ -1,17 +1,26 @@
 module.exports = {
   pathPrefix: "/gatsby-clean-portfolio",
   siteMetadata: {
-    title: `John Doe - Software Developer`,
-    description: `Add you meta Description here!`,
-    url: "https://ugglr.github.io/gatsby-clean-portfolio/",
-    twitterUsername: "@real_carlw",
-    author: `@real_carlw`,
+    title: `Flying Grizzly`,
+    description: `Tabletop games things, code stuff, and general chatter`,
+    siteUrl: "https://www.flyinggrizzly.net/",
+    twitterUsername: "@flying_grizzly",
+    author: `Sean DMR`,
   },
   plugins: [
     'gatsby-plugin-resolve-src',
     {
       resolve: 'gatsby-mdx',
       options: {
+        globalScope: `
+          import Callout from '${__dirname}/src/components/mdx_components/callout'
+          import ImageCaption from '${__dirname}/src/components/mdx_components/image_caption'
+
+          export default {
+            Callout,
+            ImageCaption
+          }
+        `,
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
