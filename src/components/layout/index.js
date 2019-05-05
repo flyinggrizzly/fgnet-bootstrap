@@ -34,7 +34,7 @@ const Layout = ({ children }) => (
           <Navbar.Toggle />
           <Navbar.Collapse>
             <Nav className="ml-auto">
-              <Nav.Link href="/feed"><RssIcon /></Nav.Link>
+              <Nav.Link href="/feed.xml"><RssIcon /></Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
