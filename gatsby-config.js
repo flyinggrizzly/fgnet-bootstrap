@@ -1,16 +1,21 @@
 module.exports = {
-  pathPrefix: "/gatsby-clean-portfolio",
   siteMetadata: {
     title: `Flying Grizzly`,
     description: `Tabletop games things, code stuff, and general chatter`,
-    siteUrl: "https://www.flyinggrizzly.net/",
-    twitterUsername: "@flying_grizzly",
+    siteUrl: `https://www.flyinggrizzly.net/`,
+    twitterUsername: `@flying_grizzly`,
     author: `Sean DMR`,
   },
   plugins: [
     'gatsby-plugin-resolve-src',
     {
-      resolve: 'gatsby-mdx',
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: 'fgnet-gatsby'
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mdx',
       options: {
         globalScope: `
           import Callout from '${__dirname}/src/components/mdx_components/callout'
@@ -75,6 +80,7 @@ module.exports = {
             serialize: ({ query: { site, allMdx } }) => {
               return  allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
+                  title: edge.node.fields.title,
                   description: edge.node.excerpt,
                   date: edge.node.fields.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
@@ -90,6 +96,8 @@ module.exports = {
                 ) {
                   edges {
                     node {
+                      id
+                      body
                       excerpt
                       html
                       fields {

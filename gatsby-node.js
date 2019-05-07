@@ -13,6 +13,7 @@ exports.createPages = ({ graphql, actions }) => {
         ) {
           edges {
             node {
+              body
               id
               fields {
                 slug
@@ -21,9 +22,6 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
-              }
-              code {
-                scope
               }
             }
           }
