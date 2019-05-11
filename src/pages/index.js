@@ -18,6 +18,7 @@ const BlogIndex = ({ data }) => {
 
           return (
             <PostPreview
+              key={ slug }
               title={ title }
               date={ date }
               slug={ slug }
