@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from 'components/layout'
 import CTA from 'components/cta'
+import markdownify from 'utils/markdownify'
 
 import styles from 'styles/blog_index.module.css'
 
@@ -13,7 +14,7 @@ const BlogIndex = ({ data }) => {
     <div className="App">
       <Layout>
         { posts.map(post => {
-          let { excerpt, fields: { date, title, slug } } = post.node
+          let { fields: { date, title, slug, excerpt } } = post.node
 
           return (
             <PostPreview
@@ -38,7 +39,7 @@ const PostPreview = ({ title, date, slug, excerpt }) => {
       </h1>
       <h3 className={ styles.postPreviewDate }>{ date }</h3>
       <div className={ styles.postPreviewExerpt }>
-        { excerpt }
+        { markdownify(excerpt) }
       </div>
       <CTA target={ slug }>Read post</CTA>
     </section>
@@ -62,6 +63,7 @@ export const pageQuery = graphql`
             slug
             date
             title
+            excerpt
           }
         }
       }
