@@ -8,8 +8,6 @@ import GithubSlugger from 'github-slugger'
 import { Container } from 'react-bootstrap'
 import mdxComponents from 'components/mdx_components'
 
-import { FaRss as RssIcon } from 'react-icons/fa'
-
 import Nav from './nav'
 
 import layoutStyles from 'styles/layout.module.css'
