@@ -24,13 +24,6 @@
   font-style: italic;
 }
 
-.post-body ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 1em;
-  text-indent: -1em;
-}
-
 /***
  * Because these are displayed as inline-block
  * (see src/styles/post_globals.css), we need to
@@ -43,6 +36,3 @@
   margin-right: -.8em;
 }
 
-.post-body ul li:before {
-  content: '– ';
-}
