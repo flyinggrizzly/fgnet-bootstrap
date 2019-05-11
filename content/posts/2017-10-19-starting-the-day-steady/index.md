@@ -7,7 +7,7 @@ tags: depression
 
 I was out sick from work a couple of days this week, and I found I was starting to get depressed. Turns out it was because I was sitting on my butt for so long.
 
-<!--more-->
+<!-- more -->
 
 I noticed the first day I was going in to work that I was already starting to feel better. It was when I was making my breakfast, first thing, ass-early in the morning.
 

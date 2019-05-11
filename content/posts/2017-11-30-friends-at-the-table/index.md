@@ -7,7 +7,7 @@ tags: tabletop, actual play, podcast, friends at the table
 
 I've been listening to [Friends at the Table](http://friendsatthetable.net) a lot recently. It's an **actual play**[^1] podcast run by a team of amazing people where they play different tabletop games. They have a focus on "critical world-building, smart characterization, and fun interaction between good friends" (to quote their strapline) and they do all three really, really well. I've just finished the first two 'seasons' of their show, and I'm super excited to pick up with the rest.
 
-<!--more-->
+<!-- more -->
 
 The show has been great for me for a few reasons:
 
