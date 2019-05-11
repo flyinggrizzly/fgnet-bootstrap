@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { MDXProvider } from '@mdx-js/react'
+import UniqueSlugContext from 'contexts/unique_slug_context'
+import GithubSlugger from 'github-slugger'
 
 import { Container } from 'react-bootstrap'
 import mdxComponents from 'components/mdx_components'
@@ -27,9 +29,11 @@ const Layout = ({ children }) => (
       <>
         <Nav />
         <Container className={ layoutStyles.mainContent }>
-          <MDXProvider components={ mdxComponents }>
-            { children }
-          </MDXProvider>
+          <UniqueSlugContext.Provider value={ new GithubSlugger() }>
+            <MDXProvider components={ mdxComponents }>
+              { children }
+            </MDXProvider>
+          </UniqueSlugContext.Provider>
         </Container>
       </>
     )}
