@@ -5,13 +5,12 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby-plugin-s3 deploy -y",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "deploy": "gatsby-plugin-s3 deploy -y"
+    "serve": "gatsby serve"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.0.14",
