@@ -1,3 +1,5 @@
+const _ = require('lodash')
+const grayMatter = require('gray-matter')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
@@ -19,6 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
                 slug
                 date
                 title
+                excerpt
               }
               frontmatter {
                 title
@@ -62,8 +65,28 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const slug = `/${year}/${month}/${title}/`
     const date = `${year}-${month}-${day}`
 
+    let rawMdExcerpt
+    const excerpt_separator = `<!-- more -->`
+    if (_.includes(node.rawBody, excerpt_separator)) {
+      rawMdExcerpt = grayMatter(node.rawBody, { excerpt_separator }).excerpt
+    }
+    else {
+      const firstParagraph = (file, options) => {
+        file.excerpt = _.split(file, "\n\n")[0]
+      }
+      rawMdExcerpt = grayMatter(node.rawBody, { excerpt: firstParagraph }).excerpt
+    }
+
+    const stripFootnotes = (string) => {
+      const mdFootnoteRegexp = /\[\^[\w-]+\]/
+      return _.replace(string, mdFootnoteRegexp, '')
+    }
+
+    let mdExcerpt = stripFootnotes(rawMdExcerpt)
+
     createNodeField({ name: 'slug', node, value: slug, })
     createNodeField({ name: 'date', node, value: date, })
     createNodeField({ name: 'title', node, value: node.frontmatter.title })
+    createNodeField({ name: 'excerpt', node, value: mdExcerpt })
   }
 }
