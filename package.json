@@ -11,7 +11,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy": "gatsby-plugin-s3 deploy"
+    "deploy": "gatsby-plugin-s3 deploy -y"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.0.14",
