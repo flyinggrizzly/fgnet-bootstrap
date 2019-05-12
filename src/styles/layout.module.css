@@ -7,6 +7,10 @@
   border-bottom: 2px solid #377BB5;
 }
 
+.navs {
+  margin-bottom: -12px;
+}
+
 ul {
   list-style: none;
   margin-left: 10px;
