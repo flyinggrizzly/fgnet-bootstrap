@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-clean-portfolio",
+  "name": "www.flyinggrizzly.net",
   "private": true,
-  "description": "A clean portfolio built with gatsby.js",
-  "version": "0.1.0",
-  "license": "MIT",
+  "description": "Personal website",
+  "version": "2.0.0.dev",
+  "license": "all rights reserved",
   "scripts": {
     "deploy": "gatsby-plugin-s3 deploy -y",
     "build": "gatsby build",
