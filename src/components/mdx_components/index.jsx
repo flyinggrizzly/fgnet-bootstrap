@@ -3,6 +3,7 @@ import { preToCodeBlock } from 'mdx-utils'
 
 import AutolinkHeading from './autolink_heading'
 import Code from './code'
+import Table from './table'
 
 import Callout from './callout'
 import ImageCaption from './image_caption'
@@ -15,6 +16,8 @@ const mdxComponents = {
   h4: props => <AutolinkHeading size="h4" { ...props } />,
   h5: props => <AutolinkHeading size="h5" { ...props } />,
   h6: props => <AutolinkHeading size="h6" { ...props } />,
+  table: props => <Table { ...props } />,
+  th: props => <Table.CollapsingTH { ...props } />,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     // if there's a codeString and some props, we passed the test

@@ -2,9 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { MDXProvider } from '@mdx-js/react'
+import UniqueSlugContext from 'contexts/unique_slug_context'
+import GithubSlugger from 'github-slugger'
 
-import { Container, Navbar } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import mdxComponents from 'components/mdx_components'
+
+import Nav from './nav'
 
 import layoutStyles from 'styles/layout.module.css'
 
@@ -21,19 +25,13 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Navbar expand="md" variant="dark" bg="dark" sticky="top" className={ layoutStyles.nav }>
-          <Navbar.Brand href="/">
-            <img src="/flying-grizzly.png" alt="a flying grizzly bear"
-              className="d-inline-block align-bottom"
-              height="40"
-            />
-            <span className={ layoutStyles.navTitle }>Flying Grizzly</span>
-          </Navbar.Brand>
-        </Navbar>
+        <Nav />
         <Container className={ layoutStyles.mainContent }>
-          <MDXProvider components={ mdxComponents }>
-            { children }
-          </MDXProvider>
+          <UniqueSlugContext.Provider value={ new GithubSlugger() }>
+            <MDXProvider components={ mdxComponents }>
+              { children }
+            </MDXProvider>
+          </UniqueSlugContext.Provider>
         </Container>
       </>
     )}

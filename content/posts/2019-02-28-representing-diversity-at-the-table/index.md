@@ -13,7 +13,7 @@ California, one of the first commitments I made to myself was that it would
 not efface the presence of Latinx, Native, Black, or Asian people who live there
 today and make the place their home, and better.
 
-<!--more-->
+<!-- more -->
 
 This of course presents me with an issue: how do I do this respectfully and
 without denigrating anyone, coopting people's experiences, or making them into

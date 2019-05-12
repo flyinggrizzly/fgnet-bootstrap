@@ -1,7 +1,3 @@
-.post-title {
-  margin-top: 1em;
-}
-
 .post-body h1 {
   font-size: 1.8rem;
 }
@@ -24,13 +20,15 @@
   font-style: italic;
 }
 
-.post-body ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 1em;
-  text-indent: -1em;
+/***
+ * Because these are displayed as inline-block
+ * (see src/styles/post_globals.css), we need to
+ * correct their positioning within text-flow
+ * when they're inside the hanging indents created
+ * for the custom ul li styles
+ */
+.post-body ul li [id^=fnref] {
+  padding-left: 1.3em;
+  margin-right: -.8em;
 }
 
-.post-body ul li:before {
-  content: '– ';
-}

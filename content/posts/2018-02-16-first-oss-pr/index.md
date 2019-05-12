@@ -7,7 +7,7 @@ tags: open source, development, speakerline
 
 I've recently made my first big PR to an open source project, [Speakerline](https://github.com/nodunayo/speakerline/pull/66). The maintainer is aces, and the whole process has been enoyable and instructive. It's the instructive I'd mostly like to talk about though ;)
 
-<!--more-->
+<!-- more -->
 
 The things I want to talk about all tie into one thing: the size of the PR. It's a pull for a single feature, so it's not like I've gone and bodged 6 features and 2 bug fixes into a single merge commit, but it's still pretty chunky. Stats for it are 588 additions against 200 some-odd removals, across 46 files. So yea, not negligible.
 

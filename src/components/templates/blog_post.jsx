@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { graphql } from 'gatsby'
-import UniqueSlugContext from 'contexts/unique_slug_context'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import { Row, Col } from 'react-bootstrap'
-import GithubSlugger from 'github-slugger'
 
 import Layout from 'components/layout'
 
@@ -21,13 +19,11 @@ export default class BlogPost extends Component {
           <Col md={{ span: 10, offset: 1 }}>
             <h1 className={ postStyles.postTitle }>{ metadata.title }</h1>
             <h6>{ metadata.date }</h6>
-            <UniqueSlugContext.Provider value={ new GithubSlugger() }>
               <main className={ postStyles.postBody }>
                 <MDXRenderer>
-                  { post.code.body }
+                  { post.body }
                 </MDXRenderer>
               </main>
-            </UniqueSlugContext.Provider>
           </Col>
         </Row>
       </Layout>
@@ -39,6 +35,7 @@ export const pageQuery = graphql`
   query BlogPostQuery($slug: String) {
     mdx(fields: { slug: { eq: $slug } }) {
       id
+      body
       frontmatter {
         title
       }
@@ -46,9 +43,6 @@ export const pageQuery = graphql`
         date
         slug
         title
-      }
-      code {
-        body
       }
     }
   }

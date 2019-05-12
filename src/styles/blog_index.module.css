@@ -1,0 +1,27 @@
+.postPreview {
+  margin-bottom: 2em;
+}
+
+.postPreview .postPreviewExerpt {
+
+}
+
+.postPreview .postPreviewTitle {
+  font-size: 2rem;
+}
+
+.postPreview .postPreviewTitle a {
+  color: #343A40;
+}
+
+.postPreview .postPreviewTitle a:hover {
+  color: #343A40;
+  border-bottom: 2px solid #377BB5;
+  text-decoration: none;
+}
+
+.postPreview .postPreviewDate {
+  font-size: 1.1rem;
+  margin-top: -5px;
+  margin-left: 5px;
+}
