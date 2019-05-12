@@ -1,7 +1,12 @@
 import React, { Component } from "react"
 import { Navbar, Nav } from 'react-bootstrap'
 
-import { FaRss as RssIcon } from 'react-icons/fa'
+import {
+  FaRss as RssIcon,
+  FaTwitter as TwitterIcon,
+  FaGithub as GithubIcon,
+  FaItchIo as ItchIcon,
+} from 'react-icons/fa'
 
 import layoutStyles from 'styles/layout.module.css'
 
@@ -29,7 +34,14 @@ export default class HeaderNav extends Component {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Nav className="ml-auto">
+          <Nav className={ `mr-auto ${ layoutStyles.navs }` }>
+            <Nav.Link href="https://www.flyinggrizzly.net/medialog/">Medialog</Nav.Link>
+            <Nav.Link href="/games/">My games</Nav.Link>
+          </Nav>
+          <Nav className={ `ml-auto ${ layoutStyles.navs }` }>
+            <Nav.Link href="https://github.com/flyinggrizzly"><GithubIcon /></Nav.Link>
+            <Nav.Link href="https://twitter.com/flying_grizzly"><TwitterIcon /></Nav.Link>
+            <Nav.Link href="https://flyinggrizzly.itch.io/"><ItchIcon /></Nav.Link>
             <Nav.Link href="/feed.xml"><RssIcon /></Nav.Link>
           </Nav>
         </Navbar.Collapse>
